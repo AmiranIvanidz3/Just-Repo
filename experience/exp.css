@@ -1,0 +1,200 @@
+.prev-btn{
+    display: flex;
+flex-direction: row;
+justify-content:    center;
+align-items: center;
+padding: 18px 60px;
+gap: 20px;
+outline:none;
+BORDER:NONE;
+position: absolute;
+width: 113px;
+height: 48px;
+left: 150px;
+bottom: 65px;
+
+background: #6B40E3;
+border-radius: 4px;
+}
+.prev-btn > span{
+    width: 43px;
+height: 20px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+letter-spacing: 0.08em;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;   
+}
+.tanamdeboba{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+    gap: 8px;
+    
+    position: absolute;
+    width: 846px;
+    height: 125px;
+    left: calc(50% - 846px/2 - 411px);
+    top: 157px;
+}
+.tanamdeboba > label {
+    width: 798px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+.tanamdeboba > input{
+    box-sizing: border-box;
+
+width: 798px;
+height: 48px;
+
+background: #FFFFFF;
+border: 1px solid #BCBCBC;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+.tanamdeboba > span {
+    width: 798px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height, or 150% */
+
+display: flex;
+align-items: center;
+
+/* შავი/500 */
+
+color: #2E2E2E;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+}
+.employe{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 846px;
+height: 125px;
+left: calc(50% - 846px/2 - 411px);
+top: 294px;
+}
+.employe > label {
+    width: 798px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+.employe > input {
+    box-sizing: border-box;
+
+width: 798px;
+height: 48px;
+
+background: #FFFFFF;
+border: 1px solid #BCBCBC;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+.employe > span{
+    width: 798px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height, or 150% */
+
+display: flex;
+align-items: center;
+
+/* შავი/500 */
+
+color: #2E2E2E;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+}
