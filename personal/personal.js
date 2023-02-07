@@ -2,42 +2,54 @@
 const name = document.getElementById('name')
 const name_label = document.getElementById('name-label')
 const name_span= document.getElementById('name-span')
-let savedInfo = []
 
+
+
+let d;
 
 function checkName(input, span)
 {
+   
     input.value = sessionStorage.getItem('name')
     name_span.innerText = sessionStorage.getItem('name')
-    if(handleNameValidation(input.value)){
-        if(input.value.length > 2){
-            input.style.borderColor = "green"
-            span.style.color = "green"
-            return true;
-        }
-    }else{
-        input.style.borderColor = "red"
-        span.style.color = "red"
-        return false
-    }
+    
         input.addEventListener('input', function(){
+            
                 name_span.innerHTML = input.value
                 sessionStorage.setItem('name', name_span.innerText);
+            if(handleNameValidation(input.value) && input.value.length > 2){
                 
-                
-               
-            if(handleNameValidation(input.value)){
-                if(input.value.length > 2){
                     input.style.borderColor = "green"
                     span.style.color = "green"
-                    return true;
-                }
+                   d = true
+                   
+                
             }else{
                 input.style.borderColor = "red"
                 span.style.color = "red"
-                return false
+                d = false
+             
             }
+            
+           
         })
+        if(handleNameValidation(input.value) && input.value.length > 2){
+                
+            input.style.borderColor = "green"
+            span.style.color = "green"
+           d = true
+           
+        
+    }else{
+        input.style.borderColor = "red"
+        span.style.color = "red"
+        d = false
+     
+    }
+       
+        return d
+        
+        
 }
 // only georgian letters 
 function handleNameValidation(value)  {
@@ -46,6 +58,8 @@ function handleNameValidation(value)  {
     RegExp(onlyGeorgian).test(value);
 }
 checkName(name, name_label)
+console.log(checkName(name, name_label))
+
 //LastName Validation
 const lastName = document.getElementById('lastName')
 const lastName_label = document.getElementById('lastName-label')
@@ -53,20 +67,11 @@ const lastName_span = document.getElementById('lastName-span')
 
 function checkLastName(input, span)
 {   
+   
+   
     lastName.value = sessionStorage.getItem('lName')
     lastName_span.innerText = sessionStorage.getItem('lName')
-    if(handleNameValidation(input.value)){
-        if(input.value.length > 2){
-            input.style.borderColor = "green"
-            span.style.color = "green"
-            return true
-
-        }
-    }else{
-        input.style.borderColor = "red"
-        span.style.color = "red"
-        return false
-    }
+   
         input.addEventListener('input', function(){
          lastName_span.innerHTML = lastName.value
          sessionStorage.setItem('lName', lastName.value)
@@ -74,21 +79,42 @@ function checkLastName(input, span)
                 if(input.value.length > 2){
                     input.style.borderColor = "green"
                     span.style.color = "green"
-                    return true
+                    d = true;
 
                 }
             }else{
                 input.style.borderColor = "red"
                 span.style.color = "red"
-                return false
+                d= false;
             }
         })
+        if(handleNameValidation(input.value) && input.value.length > 2){
+                
+            input.style.borderColor = "green"
+            span.style.color = "green"
+           d = true
+           
+        
+        }else{
+        input.style.borderColor = "red"
+        span.style.color = "red"
+        d = false
+     
+        }
+
+        return d
 }
 
 checkLastName(lastName, lastName_label)
 
-// picture upload
+console.log(lastName)
 
+
+
+
+
+// picture upload
+let p=false;
     const previewImage = (event) => {
    
         const imageFiles = event.target.files;
@@ -107,7 +133,9 @@ checkLastName(lastName, lastName_label)
            
         
             imagePreviewElement.style.display = "block";
-            return true
+            p = true;
+        }else{
+           p = false;
         }
     };
 
@@ -120,8 +148,20 @@ checkLastName(lastName, lastName_label)
     const mail_span = document.querySelector(".mail-span")
     mail.value = sessionStorage.getItem('mail')
     mail_span_right.innerText = sessionStorage.getItem('mail')
-    let stringo = ""
+    
     function validateEmail() {
+        let string = [...mail.value].reverse().join("");
+        if(string.substr(0,12) === "eg.yrrebder@"){
+         mail_span.style.color = "green"
+         d = true
+        
+      
+        }else{
+         mail_span.style.color = "red"
+         d = false
+       
+         
+        }
         
             mail.addEventListener('input', function(){
                 mail_span_right.innerText = mail.value
@@ -129,15 +169,17 @@ checkLastName(lastName, lastName_label)
                let string = [...mail.value].reverse().join("");
                if(string.substr(0,12) === "eg.yrrebder@"){
                 mail_span.style.color = "green"
-                stringo = true;
-
-                return true
+                d = true
+               
+             
                }else{
                 mail_span.style.color = "red"
-                stringo = false
-                return false
+                d = false
+              
+                
                }
                })
+               return d
             }
             validateEmail()
 
@@ -150,6 +192,7 @@ checkLastName(lastName, lastName_label)
             mobile.addEventListener('input', function(){
                 phone.innerText = mobile.value
                 sessionStorage.setItem('phone', mobile.value)
+                phone_status = true
             })
 
 
@@ -187,12 +230,27 @@ function AboutMe(){
     })
 }
 AboutMe()
-// function next(){
-//     if(checkName()){
-//         console.log("heyy")
-//     }
-// }
-// documentgetElementById('personal-from').addEventListener("submit")
+
+const personal_form = document.getElementById('personal-form')
+personal_form.addEventListener("submit",function(e){
+    {
+        if(!checkLastName(lastName, lastName_label) || !checkName(name, name_label) || !validateEmail || p == false){
+          
+            e.preventDefault()
+            alert("Check Inputs Please")
+          
+        }else{
+            
+        }
+    
+        
+       
+       
+   
+    }
+ 
+
+})
 
 
             
