@@ -349,7 +349,7 @@ order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
-.describe > input{
+.describe > textarea{
     box-sizing: border-box;
 
     width: 798px;
@@ -365,4 +365,43 @@ flex-grow: 0;
     order: 1;
     align-self: stretch;
     flex-grow: 1;
+}
+
+.add-more{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 60px;
+    gap: 20px;
+    
+    position: absolute;
+    width: 289px;
+    height: 48px;
+    left: calc(50% - 289px/2 - 666.5px);
+    top: 804px;
+    border:none;
+    background: #62A1EB;
+    border-radius: 4px;
+}
+.add-more > span{
+width: 400px;
+height: 20px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
 }
