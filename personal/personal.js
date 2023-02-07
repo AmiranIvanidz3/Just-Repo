@@ -103,6 +103,34 @@ checkLastName(lastName, lastName_label)
             mobile.addEventListener('input', function(){
                 phone.innerText = mobile.value
             })
+
+
+//About-Me-Section
+const aboutMeSpan = document.querySelector(".aboutMe-span")
+const xboutMe = document.getElementById("aboutMe")
+const aboutMeTextarea = document.getElementById("about-me-textarea")
+function AboutMe(){
+    aboutMeTextarea.addEventListener('input', function(){
+        if(aboutMeTextarea.value != 0){
+            aboutMeSpan.style.opacity = "1"
+            xboutMe.innerText = aboutMeTextarea.value
+           
+           
+        }
+        if(aboutMeTextarea.value >= 0){
+            aboutMeSpan.style.opacity = "0" 
+            xboutMe.innerText = aboutMeTextarea.value
+            
+        }
+    })
+}
+AboutMe()
+
+
+let savedInfo = []
+function sessions(){
+    
+}
             
             
         
