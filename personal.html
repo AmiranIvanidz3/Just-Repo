@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="personal/personal.css">
+    <title>Document</title>
+</head>
+<body>
+    <span class="header">პირადი ინფო</span>
+    <div class="line"></div>
+    <div class="section-1">
+      <a href="index.html"><img src="main/Vector.png" class="left-arrow" alt="index.html"></a>
+      <a href="index.html"><img src="main/ellipse.png" class="ellipse" alt="index.html">
+    </a>
+      
+    <form action="/index.html">
+        <div class="name-field">
+            
+            <label for="name">სახელი</label>
+            
+            <input type="text"  onkeypress="return event.charCode != 32" id="name" placeholder="ანზორ">
+            <span id="name-label">მინიმუმ 2 ასო, ქართული ასოებით</span>
+           
+            
+        </div>
+        <div class="lastName-field">
+            <label for="lastname">გვარი</label>
+            <input type="text"  onkeypress="return event.charCode != 32" id="lastName"placeholder ="მუმლაძე">
+            <span id="lastName-label">მინიმუმ 2 ასო, ქართული ასოებით</span>
+            
+        </div>
+        <div class="uploadImage">
+            <h3>პირადი ფოტოს ატვირთვა</h3>
+          
+                <label for="file-upload"><span class="s">ატრვირთვა</span></label>
+    <input type="file" id="file-upload" accept="image/*" onchange="previewImage(event);" />
+                
+            </label>
+        </div>
+        <div class="about-me">
+            <label for="">ჩემ შესახებ (არასავალდებული)</label>
+            <textarea id="about-me-textarea"></textarea>
+        </div>
+        <div class="mail">
+            <label for="mail" >ელ.ფოსტა</label>
+            <input  id="mail"  onkeypress="return event.charCode != 32" type="text">
+            <span class="mail-span">უნდა მთავრდებოდეს @redberry.ge</span>
+        </div>
+        <div class="mobile">
+           
+            <label for="mobile">მობილურის ნომერი</label>
+            <input  type="tel"  id="phone" name="phone" placeholder="995 555 555 555" pattern="[9]{1}[9]{1}[5]{1} [0-9]{3} [0-9]{3} [0-9]{3}" required>
+            
+            <span>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</span>
+        </div>
+        <button type="submit" class="next-btn"><span>შემდეგი</span></button>
+    </form>
+    </div>
+    <div class="section-2" style="position:relative">
+       
+            <img  id="preview-selected-image" />
+        
+        
+        <div class="name-span">
+            <span id="name-span"></span>  <span id="lastName-span"> </span>
+        </div>
+
+        <div class="mail-span-right"></div>
+        <div class="mobile-span-right">+ bhjhjvjvj</div>
+    </div>
+    <script src="personal/personal.js"></script>
+</body>
+</html>
