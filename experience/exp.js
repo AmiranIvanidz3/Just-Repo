@@ -28,6 +28,14 @@ const start_date_input = document.getElementById("start-date-input")
 const end_date_input = document.getElementById("end-date-input")
 const describe_input = document.getElementById("describe-input")
 const form = document.getElementById("experience-form")
+var input = document.querySelector("#tanamdeboba-input");
+let tanamdeboba_s;
+let employe_s;
+let start_date_s;
+let end_date_s;
+let describe_s;
+let input_s;
+
 
 
 
@@ -37,54 +45,81 @@ const form = document.getElementById("experience-form")
 function validateDates() {
     var startDate = new Date(document.querySelector("#start-date-input").value);
     var endDate = new Date(document.querySelector("#end-date-input").value);
-    var status;
+  
     if (startDate > endDate) {
       alert("End date must be after start date.");
-      status = false
-    
-     
-
+      start_date_s = false
     } else {
-      alert("Dates are valid.");
-      status = true
+ 
+      start_date_s = true
       start_date_input.style.borderColor = "green"
         end_date_input.style.borderColor = "green"
     }
-    if(status == false){
+    if(start_date_s == false){
         start_date_input.style.borderColor = "red"
         end_date_input.style.borderColor = "red"
     }
-    return status
+    return start_date_s
   }
 
 
   //Tanamdebobaa and Employe Validation
-  var input = document.querySelector("#tanamdeboba-input");
-
+  function validateInput(){
+   
   input.addEventListener("input", function() {
     if (input.value.length >= 2) {
       input.style.borderColor = "green";
+      input_s= true
     } else {
       input.style.borderColor = "red";
+      input_s = false
     }
   });
-  employe_input.addEventListener("input", function() {
-    if (input.value.length >= 2) {
-        employe_input.style.borderColor = "green";
-    } else {
-        employe_input.style.borderColor = "red";
+  return input_s
+  }
+  
+  validateInput()
+  function validateEmploye(){
+    
+    employe_input.addEventListener("input", function() {
+      if (employe_input.value.length >= 2) {
+          employe_input.style.borderColor = "green";
+          employe_s = true
+      } else {
+          employe_input.style.borderColor = "red";
+          employe_s = false
+      } 
+      
+    });
+    return employe_s
     }
-  });
+    validateEmploye()
+
+    
+  
+
+
+
 
 
   //describe_input  validation
+function describe(){
 
   describe_input.addEventListener("input", function() {
-    if (describe_input.value.length >= 2) {
+    if (describe_input.value.length > 2) {
         describe_input.style.borderColor = "green";
+        describe_s = true
     } else {
         describe_input.style.borderColor = "red";
+        describe_s = false
     }
   });
- 
+  return describe_s
+}
+  
+describe()
 
+
+function checkAll(){
+  let documen = document.querySelectorAll()
+}

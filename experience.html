@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="experience/exp.css">
+    <link rel="stylesheet" href="experience/added.css">
     
     <title>Exprience</title>
 </head>
 <body>
+   
     <span class="header">პირადი ინფო</span>
     <div class="line"></div>
     <div class="section-1">
@@ -19,7 +21,7 @@
       
     <form id="experience-form">
 
-        <div class="tanamdeboba">
+        <div class="tanamdeboba first">
             <label for="tanamdeboba-input">თანამდებობა</label>
             <input minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
             <span>მინიმუმ 2 სიმბოლო</span>
@@ -29,7 +31,7 @@
 
 
 
-        <div class="employe">
+        <div class="employe os">
             <label minlength="2" required for="employe-input">დამსაქმებელი</label>
             <input placeholder="დამსაქმებელი" type="text" id="employe-input">
             <span>მინიმუმ 2 სიმბოლო</span>
@@ -38,43 +40,98 @@
 
        
         
-            <div class="start-date">
+            <div class="start-date os">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input id="start-date-input" type="date">
+                <input required id="start-date-input" type="date">
             </div>
             
     
-            <div class="end-date">
+            <div class="end-date os">
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input id="end-date-input" onchange="validateDates()" type="date">
+                <input required id="end-date-input" onchange="validateDates()" type="date">
             </div>
             
           
 
 
-        <div class="describe">
+        <div class="describe os">
             <label for="describe-input">აღწერეთ</label>
             <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
         </div>
         
 
 
-        <div style="position: absolute;
+        <div style="position: relative;
         width: 798px;
         height: 0px;
         left: 149px;
-        top: 759px;
-        border: 1px solid #C1C1C1;"></div>
+        margin-top: 759px;
+        border: 1px solid #C1C1C1;
+        margin-bottom:59px;"></div>
+
+        
+       
+     
+        
 
 
 
+      
+        <!-- <div class="add">
+            
+            <div class="tanamdeboba-add">
+                <label for="tanamdeboba-input">თანამდებობა</label>
+                <input minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+                <span>მინიმუმ 2 სიმბოლო</span>
+            </div>
 
-        <button class="add-more"><span>მეტის გამოცდილების დამატება</span></button>
+            <div class="employe-add">
+                <label minlength="2" required for="employe-input">დამსაქმებელი</label>
+                <input placeholder="დამსაქმებელი" type="text" id="employe-input">
+                <span>მინიმუმ 2 სიმბოლო</span>
+            </div>
+
+           <div style="border:1px solid black; display:flex; justify-content:space-between ">
+            <div class="start-date-add">
+                <label for="start-date-input">დაწყების რიცხვი</label>
+                <input required id="start-date-input" type="date">
+            </div>
+            
     
-            <button class="prev-btn"type="button" onclick="window.location.href = 'personal.html'"><span>უკან</span></button>
+            <div class="end-date-add" >
+                <label for="end-date-input">დამტავრების რიცხვი</label>
+                <input required id="end-date-input" onchange="validateDates()" type="date">
+            </div>
+        </div>
+
+        <div class="describe-add">
+            <label for="describe-input">აღწერეთ</label>
+            <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+        </div>
+        <div style="
+        width: 798px;
+        height: 0px;
+        left: 149px;
+        margin-top: 58px;
+        border: 1px solid #C1C1C1;
+        margin-bottom:59px;
+        margin-left:20px"></div>
+
+
+
+       
+    
+    
+            </div> -->
+            <button type="button" value="add" class="add-more"><span>მეტის გამოცდილების დამატება</span></button>
+            <div style=" display:flex; justify-content:space-between; margin-top:111px; margin-left:150px; width:797px">
+                <button class="prev-btn-x"type="button" onclick="window.location.href = 'personal.html'"><span>უკან</span></button>
           
 
-        <button type="submit" class="next-btn"><span>შემდეგი</span></button>
+                <button type="submit" class="next-btn-x"><span>შემდეგი</span></button>
+
+            </div>
+      
         
     </form>
     </div>

@@ -1,57 +1,21 @@
-.prev-btn-x{
-    display: flex;
-flex-direction: row;
-justify-content:    center;
-align-items: center;
-padding: 18px 60px;
 
-outline:none;
-BORDER:NONE;
-
-width: 113px;
-height: 48px;
-top:111px;
-left:150px;
-
-background: #6B40E3;
-border-radius: 4px;
+.add{
+    border:1px solid black;
+    width:846px;
+    margin-left:126px;
 }
-.prev-btn-x > span{
-    width: 43px;
-height: 20px;
-
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
-
-letter-spacing: 0.08em;
-
-color: #FFFFFF;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;   
-}
-.tanamdeboba{
+.tanamdeboba-add{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 8px 24px;
     gap: 8px;
-    
-    position: absolute;
     width: 846px;
     height: 125px;
     left: calc(50% - 846px/2 - 411px);
     top: 157px;
 }
-.tanamdeboba > label {
+.tanamdeboba-add > label {
     width: 798px;
 height: 21px;
 
@@ -75,7 +39,7 @@ order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
-.tanamdeboba > input{
+.tanamdeboba-add > input{
     box-sizing: border-box;
 
 width: 798px;
@@ -92,7 +56,7 @@ order: 1;
 align-self: stretch;
 flex-grow: 0;
 }
-.tanamdeboba > span {
+.tanamdeboba-add > span {
     width: 798px;
 height: 21px;
 
@@ -118,20 +82,21 @@ order: 2;
 align-self: stretch;
 flex-grow: 0;
 }
-.employe{
+
+.employe-add{
+    margin-top:20px;
     display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding: 8px 24px;
 gap: 8px;
 
-position: absolute;
+
 width: 846px;
 height: 125px;
-left: calc(50% - 846px/2 - 411px);
-top: 294px;
+
 }
-.employe > label {
+.employe-add > label {
     width: 798px;
 height: 21px;
 
@@ -155,7 +120,7 @@ order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
-.employe > input {
+.employe-add > input {
     box-sizing: border-box;
 
 width: 798px;
@@ -172,7 +137,7 @@ order: 1;
 align-self: stretch;
 flex-grow: 0;
 }
-.employe > span{
+.employe-add > span{
     width: 798px;
 height: 21px;
 
@@ -199,21 +164,21 @@ align-self: stretch;
 flex-grow: 0;
 }
 
-.start-date{
+.start-date-add{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 8px 24px;
     gap: 8px;
     
-    position: absolute;
+  
     width: 419px;
     height: 125px;
     left: calc(50% - 419px/2 - 624.5px);
     top: 431px;
     
 }
-.start-date > label{
+.start-date-add > label{
     width: 371px;
 height: 21px;
 
@@ -237,7 +202,7 @@ order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
-.start-date > input{
+.start-date-add > input{
     box-sizing: border-box;
 
 width: 371px;
@@ -254,21 +219,21 @@ order: 1;
 align-self: stretch;
 flex-grow: 0;
 }
-.end-date{
+.end-date-add{
     display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding: 8px 24px;
 gap: 8px;
 
-position: absolute;
+
 width: 419px;
 height: 93px;
 left: calc(50% - 419px/2 - 197.5px);
 top: 431px;
 
 }
-.end-date > label{
+.end-date-add > label{
     width: 371px;
 height: 21px;
 
@@ -292,7 +257,7 @@ order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
-.end-date > input{
+.end-date-add > input{
     box-sizing: border-box;
 
 width: 371px;
@@ -310,14 +275,14 @@ align-self: stretch;
 flex-grow: 0;
 }
 
-.describe{
+.describe-add{
     display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding: 8px 24px;
 gap: 8px;
 
-position: absolute;
+
 width: 846px;
 height: 168px;
 left: calc(50% - 846px/2 - 411px);
@@ -325,7 +290,7 @@ top: 541px;
     
 
 }
-.describe > label{
+.describe-add > label{
     width: 798px;
 height: 21px;
 
@@ -349,7 +314,7 @@ order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
-.describe > textarea{
+.describe-add > textarea{
     box-sizing: border-box;
 
     width: 798px;
@@ -365,42 +330,4 @@ flex-grow: 0;
     order: 1;
     align-self: stretch;
     flex-grow: 1;
-}
-
-.add-more{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 18px 60px;
-    gap: 20px;
-    
-   
-    width: 289px;
-    height: 48px;
-    margin-left:151px;
-    border:none;
-    background: #62A1EB;
-    border-radius: 4px;
-}
-.add-more > span{
-width: 400px;
-height: 20px;
-
-font-family: 'Helvetica Neue';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-/* identical to box height */
-
-
-color: #FFFFFF;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
 }
