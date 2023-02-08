@@ -15,15 +15,16 @@
     <span class="header">პირადი ინფო</span>
     <div class="line"></div>
     <div class="section-1">
+
       <a href="index.html"><img src="main/Vector.png" class="left-arrow" alt="index.html"></a>
       <a href="index.html"><img src="main/ellipse.png" class="ellipse" alt="index.html">
     </a>
       
     <form id="experience-form">
 
-        <div class="tanamdeboba first">
+        <div class="tanamdeboba">
             <label for="tanamdeboba-input">თანამდებობა</label>
-            <input minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+            <input class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -31,33 +32,34 @@
 
 
 
-        <div class="employe os">
+        <div class="employe">
             <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-            <input placeholder="დამსაქმებელი" type="text" id="employe-input">
+            <input class="os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
 
        
         
-            <div class="start-date os">
+            <div class="start-date">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input required id="start-date-input" type="date">
+                <input  class="start-i os" onchange="startDate(event)"  required id="start-date-input" type="date">
             </div>
             
     
-            <div class="end-date os">
+            <div class="end-date">
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input required id="end-date-input" onchange="validateDates()" type="date">
+                <input  class="end-i os" required id="end-date-input" onchange="endDate(event)" type="date">
             </div>
             
           
 
 
-        <div class="describe os">
+        <div class="describe">
             <label for="describe-input">აღწერეთ</label>
-            <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+            <textarea  class="os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
         </div>
+        
         
 
 
@@ -81,32 +83,32 @@
             
             <div class="tanamdeboba-add">
                 <label for="tanamdeboba-input">თანამდებობა</label>
-                <input minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+                <input class="tanamdeboba-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
                 <span>მინიმუმ 2 სიმბოლო</span>
             </div>
 
             <div class="employe-add">
                 <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-                <input placeholder="დამსაქმებელი" type="text" id="employe-input">
+                <input class="employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
                 <span>მინიმუმ 2 სიმბოლო</span>
             </div>
 
            <div style="border:1px solid black; display:flex; justify-content:space-between ">
             <div class="start-date-add">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input required id="start-date-input" type="date">
+                <input class="start-date-i" required id="start-date-input" type="date">
             </div>
             
     
             <div class="end-date-add" >
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input required id="end-date-input" onchange="validateDates()" type="date">
+                <input class="end-date-i" required id="end-date-input" onchange="validateDates()" type="date">
             </div>
         </div>
 
         <div class="describe-add">
             <label for="describe-input">აღწერეთ</label>
-            <textarea placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+            <textarea  class="describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
         </div>
         <div style="
         width: 798px;
@@ -123,6 +125,9 @@
     
     
             </div> -->
+            <div id="amo">
+
+            </div>
             <button type="button" value="add" class="add-more"><span>მეტის გამოცდილების დამატება</span></button>
             <div style=" display:flex; justify-content:space-between; margin-top:111px; margin-left:150px; width:797px">
                 <button class="prev-btn-x"type="button" onclick="window.location.href = 'personal.html'"><span>უკან</span></button>
@@ -172,8 +177,7 @@
             <div>sasd</div>
         </div>
     
-       
-    
+ 
         
         <script src="experience/exp.js"></script>
 </body>

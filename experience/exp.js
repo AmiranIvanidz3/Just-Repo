@@ -35,29 +35,47 @@ let start_date_s;
 let end_date_s;
 let describe_s;
 let input_s;
+let num = 0;
 
 
 
 
-
+let startDataa;
+let startElem;
+let endDataa;
+let endElem;
 //start date and end date validation 
+function startDate(event){
+  let e = event.target
+  var start = new Date(event.target.value)
+  startDataa = start
+  startElem = e
+  validateDates()
 
-function validateDates() {
-    var startDate = new Date(document.querySelector("#start-date-input").value);
-    var endDate = new Date(document.querySelector("#end-date-input").value);
   
-    if (startDate > endDate) {
+}
+function endDate(event){
+  let e = event.target
+  var endDate = new Date(event.target.value)
+  endDataa = endDate
+  endElem = e
+  validateDates()
+
+}
+function validateDates() {
+   
+    if (startDataa > endDataa) {
       alert("End date must be after start date.");
       start_date_s = false
     } else {
  
       start_date_s = true
-      start_date_input.style.borderColor = "green"
-        end_date_input.style.borderColor = "green"
+      startElem.style.borderColor = "green"
+        endElem.style.borderColor = "green"
     }
     if(start_date_s == false){
-        start_date_input.style.borderColor = "red"
-        end_date_input.style.borderColor = "red"
+        startElem.style.borderColor = "red"
+        endElem.style.borderColor = "red"
     }
     return start_date_s
   }
@@ -65,34 +83,45 @@ function validateDates() {
 
   //Tanamdebobaa and Employe Validation
   function validateInput(){
+    const inpu = document.querySelectorAll(".tan-i")
+    inpu.forEach(function(x){
+      x.addEventListener("input", function() {
+        if (x.value.length >= 2) {
+          x.style.borderColor = "green";
+          input_s= true
+        } else {
+          x.style.borderColor = "red";
+          input_s = false
+        }
+      });
+return input_s;
+    })
    
-  input.addEventListener("input", function() {
-    if (input.value.length >= 2) {
-      input.style.borderColor = "green";
-      input_s= true
-    } else {
-      input.style.borderColor = "red";
-      input_s = false
-    }
-  });
+   
+  
   return input_s
   }
-  
+  //input
   validateInput()
   function validateEmploye(){
-    
-    employe_input.addEventListener("input", function() {
-      if (employe_input.value.length >= 2) {
-          employe_input.style.borderColor = "green";
-          employe_s = true
-      } else {
-          employe_input.style.borderColor = "red";
-          employe_s = false
-      } 
+    const e = document.querySelectorAll(".employe-i")
+    console.log(e)
+    e.forEach(function(x){
+      x.addEventListener("input", function() {
+        if (x.value.length >= 2) {
+            x.style.borderColor = "green";
+            employe_s = true
+        } else {
+            x.style.borderColor = "red";
+            employe_s = false
+        } 
+        
+      });
+      return employe_s
       
-    });
-    return employe_s
-    }
+
+    })
+  }
     validateEmploye()
 
     
@@ -103,23 +132,119 @@ function validateDates() {
 
 
   //describe_input  validation
+ 
 function describe(){
+  const describe_i = document.querySelectorAll(".describe-i")
+  describe_i.forEach(function(i){
+    
+    i.addEventListener("input", function() {
+      if (i.value.length > 2) {
+          i.style.borderColor = "green";
+          describe_s = true
+      } else {
+          i.style.borderColor = "red";
+          describe_s = false
+      }
+    });
+    return describe_s
 
-  describe_input.addEventListener("input", function() {
-    if (describe_input.value.length > 2) {
-        describe_input.style.borderColor = "green";
-        describe_s = true
-    } else {
-        describe_input.style.borderColor = "red";
-        describe_s = false
-    }
-  });
-  return describe_s
+
+  })
+
+  
 }
   
 describe()
 
-
-function checkAll(){
-  let documen = document.querySelectorAll()
+function checkInputBorders(className) {
+  let inputs = document.getElementsByClassName(className);
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].style.borderColor !== 'green') {
+      return false;
+    }
+  }
+  return true;
 }
+
+
+
+
+
+
+ 
+ 
+
+
+
+  form.addEventListener("click", function(e){
+    
+    
+    if(e.target.innerHTML == "მეტის გამოცდილების დამატება" || e.target.value =='add'){
+     
+     
+    
+      if(checkInputBorders("os")){
+       
+    
+        document.getElementById("amo").innerHTML += `<div class="add">
+            
+        <div class="tanamdeboba-add">
+            <label for="tanamdeboba-input">თანამდებობა</label>
+            <input class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+            <span>მინიმუმ 2 სიმბოლო</span>
+        </div>
+
+        <div class="employe-add">
+            <label minlength="2" required for="employe-input">დამსაქმებელი</label>
+            <input class="os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
+            <span>მინიმუმ 2 სიმბოლო</span>
+        </div>
+
+       <div style="border:1px solid black; display:flex; justify-content:space-between ">
+        <div class="start-date-add">
+            <label for="start-date-input">დაწყების რიცხვი</label>
+            <input onchange="endDate(event)" class="start-date-i" required id="start-date-input" type="date">
+        </div>
+        
+
+        <div class="end-date-add" >
+            <label for="end-date-input">დამტავრების რიცხვი</label>
+            <input class="os end-date-i" required id="end-date-input" onchange="startDate(event)" type="date">
+        </div>
+    </div>
+
+    <div class="describe-add">
+        <label for="describe-input">აღწერეთ</label>
+        <textarea  class="describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+    </div>
+    <div style="
+    width: 798px;
+    height: 0px;
+    left: 149px;
+    margin-top: 58px;
+    border: 1px solid #C1C1C1;
+    margin-bottom:59px;
+    margin-left:20px"></div>
+
+
+
+   
+
+
+        </div> `
+        describe()
+        validateEmploye()
+        validateInput()
+       
+       
+      }else{
+        console.log("xui")
+      }
+    }
+
+    
+
+
+  })
+
+
