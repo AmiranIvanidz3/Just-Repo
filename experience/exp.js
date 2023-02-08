@@ -41,14 +41,50 @@ function validateDates() {
     if (startDate > endDate) {
       alert("End date must be after start date.");
       status = false
+    
      
 
     } else {
       alert("Dates are valid.");
       status = true
+      start_date_input.style.borderColor = "green"
+        end_date_input.style.borderColor = "green"
+    }
+    if(status == false){
+        start_date_input.style.borderColor = "red"
+        end_date_input.style.borderColor = "red"
     }
     return status
   }
 
+
+  //Tanamdebobaa and Employe Validation
+  var input = document.querySelector("#tanamdeboba-input");
+
+  input.addEventListener("input", function() {
+    if (input.value.length >= 2) {
+      input.style.borderColor = "green";
+    } else {
+      input.style.borderColor = "red";
+    }
+  });
+  employe_input.addEventListener("input", function() {
+    if (input.value.length >= 2) {
+        employe_input.style.borderColor = "green";
+    } else {
+        employe_input.style.borderColor = "red";
+    }
+  });
+
+
+  //describe_input  validation
+
+  describe_input.addEventListener("input", function() {
+    if (describe_input.value.length >= 2) {
+        describe_input.style.borderColor = "green";
+    } else {
+        describe_input.style.borderColor = "red";
+    }
+  });
  
 
