@@ -115,29 +115,28 @@ console.log(lastName)
 
 // picture upload
 let p=false;
-    const previewImage = (event) => {
-   
-        const imageFiles = event.target.files;
-            console.log(imageFiles)
-        const imageFilesLength = imageFiles.length;
-     
-        if (imageFilesLength > 0) {
-          
-            const imageSrc = URL.createObjectURL(imageFiles[0]);
-           
-           
-     
-            const imagePreviewElement = document.querySelector("#preview-selected-image");
-        
-            imagePreviewElement.src = imageSrc;
-           
-        
-            imagePreviewElement.style.display = "block";
-            p = true;
-        }else{
-           p = false;
-        }
-    };
+x()
+function x(){
+    var imageInput = document.getElementById('file-upload');
+var displayedImage = document.getElementById('preview-selected-image');
+
+imageInput.addEventListener('change', function(e) {
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    displayedImage.src = event.target.result;
+    sessionStorage.setItem('imageData', displayedImage.src);
+    p= true
+  };
+  reader.readAsDataURL(e.target.files[0]);
+});
+
+// Load image from session storage on page load
+var storedImageData = sessionStorage.getItem('imageData');
+if (storedImageData) {
+  displayedImage.src = storedImageData;
+  p = true
+}
+}
 
 
 
@@ -149,6 +148,10 @@ let p=false;
     mail.value = sessionStorage.getItem('mail')
     mail_span_right.innerText = sessionStorage.getItem('mail')
     
+    function isValidEmail(email) {
+        var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regex.test(String(email).toLowerCase());
+      }
     function validateEmail() {
         let string = [...mail.value].reverse().join("");
         if(string.substr(0,12) === "eg.yrrebder@"){

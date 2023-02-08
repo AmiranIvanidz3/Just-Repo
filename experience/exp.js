@@ -12,6 +12,12 @@ if(sessionStorage.getItem('about') !== ""){
     about.innerText = sessionStorage.getItem('about')
     document.querySelector(".aboutMe-span").style.opacity = "1"
 }
+const displayedImage = document.getElementById("preview-selected-image")
+var storedImageData = sessionStorage.getItem('imageData');
+if (storedImageData) {
+  displayedImage.src = storedImageData;
+  
+}
 
 
 
