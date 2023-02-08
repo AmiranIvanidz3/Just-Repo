@@ -17,7 +17,7 @@
       <a href="index.html"><img src="main/ellipse.png" class="ellipse" alt="index.html">
     </a>
       
-    <form id="experience-form" action="C:\Users\amira\OneDrive\Desktop\AMirani\experience.html" >
+    <form id="experience-form">
 
         <div class="tanamdeboba">
             <label for="tanamdeboba-input">თანამდებობა</label>
@@ -36,16 +36,20 @@
         </div>
 
 
-        <div class="start-date">
-            <label for="start-date-input">დაწყების რიცხვი</label>
-            <input id="start-date-input" type="date">
-        </div>
+       
         
-
-        <div class="end-date">
-            <label for="end-date-input">დამტავრების რიცხვი</label>
-            <input id="end-date-input" type="date">
-        </div>
+            <div class="start-date">
+                <label for="start-date-input">დაწყების რიცხვი</label>
+                <input id="start-date-input" type="date">
+            </div>
+            
+    
+            <div class="end-date">
+                <label for="end-date-input">დამტავრების რიცხვი</label>
+                <input id="end-date-input" onchange="validateDates()" type="date">
+            </div>
+            
+          
 
 
         <div class="describe">
