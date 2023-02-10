@@ -404,3 +404,76 @@ flex: none;
 order: 0;
 flex-grow: 0;
 }
+.right-exp{
+    position:relative;
+    width:680px;
+    left:80px;
+    height:200px;
+    margin-top:24px;
+}
+.right-exp > header {
+   
+width: 143px;
+height: 22px;
+left: 80px;
+top: 365px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #F93B1D;
+}
+.right-exp > label{
+    position:absolute;
+  
+width: 100%;
+height: 20px;
+margin-top:14px;
+
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+
+
+color: #1A1A1A;
+}
+.right-exp .right-date{
+ 
+width: 183px;
+height: 19px;
+margin-top: 42px;
+
+font-family: 'Helvetica Neue';
+font-style: italic;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #919191;
+}
+.right-exp .right-describe{
+margin-top:16px;
+width: 662px;
+height: 66px;
+left: 80px;
+top: 464px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+/* or 138% */
+
+text-transform: capitalize;
+overflow:auto;
+color: #000000;
+}
