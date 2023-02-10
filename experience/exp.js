@@ -331,4 +331,3 @@ getStorage(".start-i")
   
 
 
-  // sessionStorage.clear()

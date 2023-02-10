@@ -1,3 +1,4 @@
+
 function setStorage(classs){
     var number = 0
     var inputs = document.querySelectorAll(`${classs}`);
@@ -20,16 +21,20 @@ function setStorage(classs){
     })
     number = 0
    }
-   getStorage(".describe-i")
+   function getAllStorage(){
+    getStorage(".describe-i")
     getStorage(".tan-i")
     getStorage(".employe-i")
     getStorage(".end-i")
     getStorage(".start-i")
+   }
   
+   getAllStorage()
 
  
  
  document.getElementById("amo").innerHTML = sessionStorage.getItem("html")
+ document.getElementById("right").innerHTML += sessionStorage.getItem("right-html")
  function saveByClass(classs){
     document.addEventListener('input', function(event) {
         let inputs = document.getElementsByClassName(`${classs}`);
@@ -48,28 +53,32 @@ function setStorage(classs){
       
     
 }
-let tanInputs = 0;
-function giveInfo(input,element,length){
-       
-   
-    for(let i =0; i <= length; i++){
-       
-        let inputt = document.querySelector(`${input}${i}`)
-        let elem = document.querySelector(`${element}${i}`)
-        console.log(inputt)
-        inputt.addEventListener("input",function(){
-            elem.innerText = inputt.value
-        })
-        elem.innerText = inputt.value
-    }
+
+let number = 1;
+
+
+let gg = '';
+function giveInfo(classs, element){
+    let x = document.querySelectorAll(`${classs}`)
+    
+   for(let i=0; i < x.length ; i++){
+    let y = document.querySelector(`${element}${i}`)
+    x[i].addEventListener("input", function(){
+        y.innerText = x[i].value
+    }) 
 }
-giveInfo(".tan", ".right-tan",tanInputs)
-giveInfo(".employe", ".right-employe",tanInputs)
-giveInfo(".describe", ".right-describe",tanInputs)
-giveInfo(".start", ".right-start",tanInputs)
-giveInfo(".end", ".right-end",tanInputs)
+}
+function giveAllinfo(){
+    giveInfo(".tan-i", ".right-tan")
+giveInfo(".employe-i", ".right-employe")
+giveInfo(".start-i", ".right-start")
+giveInfo(".end-i", ".right-end")
+giveInfo(".describe-i", ".right-describe")
+}
 
 
+
+giveAllinfo()
 
 function validateDates() {
   const startDates = document.querySelectorAll('.start-i');
@@ -142,6 +151,7 @@ function emptyInput(classs) {
    }
 
   }
+  
   function liveValidate(classs){
     var inputs = document.querySelectorAll(`${classs}`);
     inputs.forEach(function(input){
@@ -170,12 +180,6 @@ function emptyInput(classs) {
 
 
   document.querySelector('.add-more').addEventListener("click", function(e){
-   
-    
-     
-    
-    
-
     if(checkInputs() && validateDates()){
         saveByClass("tan-i")
         saveByClass("describe-i")
@@ -226,25 +230,39 @@ function emptyInput(classs) {
        sessionStorage.setItem('html', document.getElementById("amo").innerHTML )
         typeBorderColor()
         workDate()
-        getStorage(".describe-i")
-getStorage(".tan-i")
-getStorage(".employe-i")
-getStorage(".end-i")
-getStorage(".start-i")
-       
-      
+        getAllStorage()
+
+
+document.getElementById("right").innerHTML += ` 
+<div style="border:1px solid black" class="right-exp">
+<header>გამოცდილება</header>
+<label class="right-label"><span class="right-tan${number}"></span> , <span class="right-employe${number}"></span></label>
+<p class="right-date"><span class="right-start${number}"></span> - <span class="right-end${number}"></span></p>
+<p  class="right-describe right-describe${number}"></p>
+
+</div> `
+number++
+sessionStorage.setItem('number', number)
+number = sessionStorage.getItem("number")
+sessionStorage.setItem('right-html',document.getElementById("right").innerHTML )
+giveAllinfo()
+
+
+
       
   }
 
 
 
     
-     
+
+  
     
       
 }
+
 )   
 
 
-        
+     
   
