@@ -43,13 +43,13 @@
         
             <div class="start-date">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input data-input="0" class="start-i os" onchange="startDate(event)"  required id="start-date-input" type="date">
+                <input onchange="validateDateInputs()" data-input="0" class="start-i os"  required id="start-date-input" type="date">
             </div>
             
     
             <div class="end-date">
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input data-input="0" class="end-i os" required id="end-date-input" onchange="endDate(event)" type="date">
+                <input onchange="validateDateInputs()" data-input="0" class="end-i os" required id="end-date-input" type="date">
             </div>
             
           
@@ -179,6 +179,7 @@
     
  
         
-        <script src="experience/exp.js"></script>
+        <script src="experience/personal-info.js"></script>
+        <script src="experience/validation.js"></script>
 </body>
 </html>

@@ -1,4 +1,9 @@
 //variables-storage
+getStorage(".describe-i")
+getStorage(".tan-i")
+getStorage(".employe-i")
+getStorage(".end-i")
+getStorage(".start-i")
 document.getElementById("amo").innerHTML = sessionStorage.getItem("html")
 const name_span = document.getElementById('name-span')
 const lastName_span = document.getElementById('lastName-span')
@@ -91,6 +96,8 @@ function validateDates() {
   
  
   function checkDates(){
+    let x = document.querySelectorAll(".start-i")
+    let y =  document.querySelectorAll(".start-i")
    let start =  new Date(start_date_input.value)
    
    let end =  new Date(end_date_input.value)
@@ -241,11 +248,14 @@ console.log(sessionStorage.getItem(".describe-i1"))
   form.addEventListener("click", function(e){
    
     if(e.target.innerHTML == "მეტის გამოცდილების დამატება" || e.target.value =='add'){
+     
       emptyInput(".tan-i")
       emptyInput(".describe-i")
       emptyInput(".employe-i")
       checkDateInput()
-    setStorage(".tan-i")
+    
+
+
      
     
       if(status()){
@@ -268,13 +278,13 @@ console.log(sessionStorage.getItem(".describe-i1"))
        <div style="border:1px solid black; display:flex; justify-content:space-between ">
         <div class="start-date-add">
             <label for="start-date-input">დაწყების რიცხვი</label>
-            <input onchange="endDate(event)" class="start-date-i" required id="start-date-input" type="date">
+            <input onchange="startDate(event)" class="start-i" required id="start-date-input" type="date">
         </div>
         
 
         <div class="end-date-add" >
             <label for="end-date-input">დამტავრების რიცხვი</label>
-            <input class="os end-date-i" required id="end-date-input" onchange="startDate(event)" type="date">
+            <input class="os end-i" required id="end-date-input" onchange="endDate(event)" type="date">
         </div>
     </div>
 
@@ -297,8 +307,16 @@ console.log(sessionStorage.getItem(".describe-i1"))
 
 
         </div> `
+        liveValidate(".tan-i")
+  liveValidate(".describe-i")
+  liveValidate('.employe-i')
+  getStorage(".describe-i")
+getStorage(".tan-i")
+getStorage(".employe-i")
+getStorage(".end-i")
+getStorage(".start-i")
         
-        allBorderColor
+
         sessionStorage.setItem("html", document.getElementById("amo").innerHTML)
      
        
