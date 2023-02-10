@@ -1,4 +1,5 @@
 //variables-storage
+document.getElementById("amo").innerHTML = sessionStorage.getItem("html")
 const name_span = document.getElementById('name-span')
 const lastName_span = document.getElementById('lastName-span')
 const mail_span_right = document.querySelector(".mail-span-right")
@@ -18,6 +19,7 @@ if (storedImageData) {
   displayedImage.src = storedImageData;
   
 }
+
 
 
 
@@ -46,15 +48,19 @@ let endDataa;
 let endElem;
 //start date and end date validation 
 function startDate(event){
+  setStorage(".start-i")
   let e = event.target
   var start = new Date(event.target.value)
+  console.log(start.value)
   startDataa = start
   startElem = e
   validateDates()
+  
 
   
 }
 function endDate(event){
+  setStorage(".end-i")
   let e = event.target
   var endDate = new Date(event.target.value)
   endDataa = endDate
@@ -63,64 +69,58 @@ function endDate(event){
 
 }
 function validateDates() {
-   
-    if (startDataa > endDataa) {
-      alert("End date must be after start date.");
-      start_date_s = false
-    } else {
- 
-      start_date_s = true
-      startElem.style.borderColor = "green"
-        endElem.style.borderColor = "green"
-    }
-    if(start_date_s == false){
-        startElem.style.borderColor = "red"
-        endElem.style.borderColor = "red"
-    }
-    return start_date_s
+  if(startDataa < endDataa){
+    startElem.style.borderColor = "green"
+    endElem.style.borderColor = "green"
+   }else{
+    startElem.style.borderColor = "red"
+    endElem.style.borderColor = "red"
+   }
   }
-
-
-  //Tanamdebobaa and Employe Validation
-  function validateInput(){
-    const inpu = document.querySelectorAll(".tan-i")
-    inpu.forEach(function(x){
-      x.addEventListener("input", function() {
-        if (x.value.length >= 2) {
-          x.style.borderColor = "green";
-          input_s= true
-        } else {
-          x.style.borderColor = "red";
-          input_s = false
-        }
-      });
-return input_s;
+  function checkDateInput() {
+    var dateInput = document.querySelectorAll('input[type="date"]');
+    dateInput.forEach(function(dateInput){
+      if (!dateInput.value) {
+        dateInput.style.borderColor = "red"
+        return false
+      }
+      dateInput.style.borderColor = "green"
+      return true
     })
-   
-   
+    }
   
-  return input_s
+ 
+  function checkDates(){
+   let start =  new Date(start_date_input.value)
+   
+   let end =  new Date(end_date_input.value)
+   if(start < end){
+    
+    start_date_input.style.borderColor = "green"
+    end_date_input.style.borderColor = "green"
+    return true
+    
+   }else{
+  
+    start_date_input.style.borderColor = "red"
+    end_date_input.style.borderColor = "red"
+    return false
+
+   }
+   
+    
+
   }
-  //input
-  validateInput()
+  
+
+let input_num = 0;
+  //Tanamdebobaa and Employe Validation
+  
+
   function validateEmploye(){
     const e = document.querySelectorAll(".employe-i")
-    console.log(e)
-    e.forEach(function(x){
-      x.addEventListener("input", function() {
-        if (x.value.length >= 2) {
-            x.style.borderColor = "green";
-            employe_s = true
-        } else {
-            x.style.borderColor = "red";
-            employe_s = false
-        } 
-        
-      });
-      return employe_s
-      
-
-    })
+    
+    
   }
     validateEmploye()
 
@@ -130,67 +130,132 @@ return input_s;
 
 
 
-
+function allBorderColor(){
+  let elem = document.querySelectorAll(".os")
+  elem.forEach(function(x){
+    x.style.backgroundColor = "yellow"
+  })
+}
   //describe_input  validation
  
 function describe(){
   const describe_i = document.querySelectorAll(".describe-i")
-  describe_i.forEach(function(i){
+    if(emptyInput("describe-i")){
+      return true
+    }else{
+      return false
+    }
     
-    i.addEventListener("input", function() {
-      if (i.value.length > 2) {
-          i.style.borderColor = "green";
-          describe_s = true
-      } else {
-          i.style.borderColor = "red";
-          describe_s = false
-      }
-    });
-    return describe_s
 
 
-  })
+ 
 
   
 }
   
 describe()
 
-function checkInputBorders(className) {
-  let inputs = document.getElementsByClassName(className);
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].style.borderColor !== 'green') {
-      return false;
+
+
+
+function liveValidate(classs){
+  var inputs = document.querySelectorAll(`${classs}`);
+  inputs.forEach(function(input){
+    input.addEventListener("input",function(){
+      setStorage(classs)
+      
+      if(input.value.length  < 2){
+        input.style.borderColor = "red"
+
+      }else{
+        input.style.borderColor = "green"
+
+      }
+    })
+})
+}
+liveValidate(".tan-i")
+liveValidate(".describe-i")
+liveValidate('.employe-i')
+
+getStorage(".describe-i")
+getStorage(".tan-i")
+getStorage(".employe-i")
+getStorage(".end-i")
+getStorage(".start-i")
+function emptyInput(classs) {
+  let status;
+  var inputs = document.querySelectorAll(`${classs}`);
+ 
+
+  for (var i = 0; i < inputs.length; i++) {
+    if (!inputs[i].value && inputs[i].value < 1  ) {
+      inputs[i].style.borderColor = "red"
+      status = false;
+    }else{
+      inputs[i].style.borderColor = "green"
+      status = true
     }
   }
-  return true;
+  return status
 }
 
+console.log(sessionStorage.getItem(".describe-i1"))
+ function setStorage(classs){
+  var number = 0
+  var inputs = document.querySelectorAll(`${classs}`);
+  inputs.forEach(function(input){
+    let info = input.value
+    sessionStorage.setItem(`${classs}${number}`, `${input.value}`)
 
+    number++
+  })
+  number = 0
+ }
+ function getStorage(classs){
+  var number = 0
+  var inputs = document.querySelectorAll(`${classs}`);
+  inputs.forEach(function(input){
 
+    input.value = sessionStorage.getItem(`${classs}${number}`)
+    number++
+  
+  })
+  number = 0
+ }
 
 
 
  
- 
+ function status(){
+  if(emptyInput(".tan-i") &&  emptyInput(".describe-i") &&  emptyInput(".employe-i")){
+    return true
+  }else{
+    return false
+  }
+  
+ }
 
 
 
   form.addEventListener("click", function(e){
-    
-    
+   
     if(e.target.innerHTML == "მეტის გამოცდილების დამატება" || e.target.value =='add'){
-     
+      emptyInput(".tan-i")
+      emptyInput(".describe-i")
+      emptyInput(".employe-i")
+      checkDateInput()
+    setStorage(".tan-i")
      
     
-      if(checkInputBorders("os")){
+      if(status()){
        
-    
+        
         document.getElementById("amo").innerHTML += `<div class="add">
             
         <div class="tanamdeboba-add">
             <label for="tanamdeboba-input">თანამდებობა</label>
-            <input class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+            <input data-input="0" class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -232,9 +297,10 @@ function checkInputBorders(className) {
 
 
         </div> `
-        describe()
-        validateEmploye()
-        validateInput()
+        
+        allBorderColor
+        sessionStorage.setItem("html", document.getElementById("amo").innerHTML)
+     
        
        
       }else{
@@ -246,5 +312,7 @@ function checkInputBorders(className) {
 
 
   })
+  
 
 
+  // sessionStorage.clear()

@@ -1,21 +1,37 @@
 
-x()
-function x(){
-    var imageInput = document.getElementById('file-uload');
-var displayedImage = document.getElementById('preview-selected-image]');
+const addInputsButton = document.getElementById("add-inputs-button");
+const inputsContainer = document.getElementById("inputs-container");
 
-imageInput.addEventListener('change', function(e) {
-  var reader = new FileReader();
-  reader.onload = function(event) {
-    displayedImage.src = event.target.result;
-    sessionStorage.setItem('imageData', displayedImage.src);
-  };
-  reader.readAsDataURL(e.target.files[0]);
+addInputsButton.addEventListener("click", function() {
+  const input1 = document.createElement("input");
+  const input2 = document.createElement("input");
+  input1.classList.add("input");
+  input2.classList.add("input");
+  inputsContainer.appendChild(input1);
+  inputsContainer.appendChild(input2);
 });
 
-// Load image from session storage on page load
-var storedImageData = sessionStorage.getItem('imageData');
-if (storedImageData) {
-  displayedImage.src = storedImageData;
-}
-}
+window.addEventListener("beforeunload", function() {
+  const inputs = document.querySelectorAll(".input");
+  const inputsValues = [];
+  inputs.forEach(function(input) {
+    inputsValues.push(input.value);
+  });
+  sessionStorage.setItem("inputsValues", JSON.stringify(inputsValues));
+});
+
+window.addEventListener("load", function() {
+  const inputsValues = JSON.parse(sessionStorage.getItem("inputsValues"));
+  if (inputsValues) {
+    inputsValues.forEach(function(inputValue) {
+      const input1 = document.createElement("input");
+      const input2 = document.createElement("input");
+      input1.classList.add("input");
+      input2.classList.add("input");
+      input1.value = inputValue;
+      input2.value = inputValue;
+      inputsContainer.appendChild(input1);
+      inputsContainer.appendChild(input2);
+    });
+  }
+});

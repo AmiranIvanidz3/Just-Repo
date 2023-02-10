@@ -24,7 +24,7 @@
 
         <div class="tanamdeboba">
             <label for="tanamdeboba-input">თანამდებობა</label>
-            <input class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+            <input data-input="0" class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -34,7 +34,7 @@
 
         <div class="employe">
             <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-            <input class="os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
+            <input data-employe="0" class="os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -43,13 +43,13 @@
         
             <div class="start-date">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input  class="start-i os" onchange="startDate(event)"  required id="start-date-input" type="date">
+                <input data-input="0" class="start-i os" onchange="startDate(event)"  required id="start-date-input" type="date">
             </div>
             
     
             <div class="end-date">
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input  class="end-i os" required id="end-date-input" onchange="endDate(event)" type="date">
+                <input data-input="0" class="end-i os" required id="end-date-input" onchange="endDate(event)" type="date">
             </div>
             
           
@@ -57,7 +57,7 @@
 
         <div class="describe">
             <label for="describe-input">აღწერეთ</label>
-            <textarea  class="os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+            <textarea data-describe="0" class="os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
         </div>
         
         
@@ -83,7 +83,7 @@
             
             <div class="tanamdeboba-add">
                 <label for="tanamdeboba-input">თანამდებობა</label>
-                <input class="tanamdeboba-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+                <input data-input="0" class="tanamdeboba-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
                 <span>მინიმუმ 2 სიმბოლო</span>
             </div>
 
