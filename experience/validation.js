@@ -21,10 +21,10 @@ function setStorage(classs){
     number = 0
    }
    getStorage(".describe-i")
-getStorage(".tan-i")
-getStorage(".employe-i")
-getStorage(".end-i")
-getStorage(".start-i")
+    getStorage(".tan-i")
+    getStorage(".employe-i")
+    getStorage(".end-i")
+    getStorage(".start-i")
   
 
  
@@ -48,6 +48,27 @@ getStorage(".start-i")
       
     
 }
+let tanInputs = 0;
+function giveInfo(input,element,length){
+       
+   
+    for(let i =0; i <= length; i++){
+       
+        let inputt = document.querySelector(`${input}${i}`)
+        let elem = document.querySelector(`${element}${i}`)
+        console.log(inputt)
+        inputt.addEventListener("input",function(){
+            elem.innerText = inputt.value
+        })
+        elem.innerText = inputt.value
+    }
+}
+giveInfo(".tan", ".right-tan",tanInputs)
+giveInfo(".employe", ".right-employe",tanInputs)
+giveInfo(".describe", ".right-describe",tanInputs)
+giveInfo(".start", ".right-start",tanInputs)
+giveInfo(".end", ".right-end",tanInputs)
+
 
 
 function validateDates() {

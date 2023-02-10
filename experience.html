@@ -24,7 +24,7 @@
 
         <div class="tanamdeboba">
             <label for="tanamdeboba-input">თანამდებობა</label>
-            <input  data-input="0" class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+            <input  data-id="0" class="os tan-i tan0" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -34,7 +34,7 @@
 
         <div class="employe">
             <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-            <input data-employe="0" class="os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
+            <input data-employe="0" class="employe0 os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -43,13 +43,13 @@
        
             <div class="start-date">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input  data-input="0" class="start-i os"  required id="start-date-input" type="date">
+                <input  data-input="0" class="start0 start-i os"  required id="start-date-input" type="date">
             </div>
             
     
             <div class="end-date">
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input data-input="0" class="end-i os" required id="end-date-input" type="date">
+                <input data-input="0" class="end0 end-i os" required id="end-date-input" type="date">
             </div>
             
           
@@ -57,7 +57,7 @@
 
         <div class="describe">
             <label for="describe-input">აღწერეთ</label>
-            <textarea data-describe="0" class="os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+            <textarea data-describe="0" class="describe0 os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
         </div>
         
         
@@ -174,14 +174,15 @@
             margin-right:80px;
             
             border: 1px solid #C8C8C8;"></div>
-        
-        <div style="border:1px solid black" class="right-exp">
-            <header class="header-i">გამოცდილება</header>
-            <label class="right-label-i">React Native Developer, Microsoft</label>
-            <p class="right-date-i">2020-09-23 - 2020-09-23</p>
-            <p class="right-describe-i">Experienced Javascript Native Developer with 5 years in the industry. proficient withreact. Used problem-solving aptitude to encahge application performance by 14%.created data visualisation tools and integrated designs. </p>
+        <div id="right-section"> <div style="border:1px solid black" class="right-exp">
+            <header>გამოცდილება</header>
+            <label class="right-label"><span class="right-tan0"></span> , <span class="right-employe0"></span></label>
+            <p class="right-date"><span class="right-start0"></span> - <span class="right-end0"></span></p>
+            <p  class="right-describe right-describe0"></p>
 
         </div> 
+    </div>
+       
              
         </div>
     
