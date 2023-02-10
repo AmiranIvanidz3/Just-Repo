@@ -241,7 +241,7 @@ color: #000000;
     
 }
 #aboutMe{
-    position: absolute;
+    position: relative;
     width: 432px;
     height: 72px;
     left: 80px;
@@ -255,7 +255,7 @@ color: #000000;
     /* or 138% */
     
     text-transform: lowercase;
-    overflow-y: auto;
+   
     color: #000000;
 }
 #preview-selected-image{

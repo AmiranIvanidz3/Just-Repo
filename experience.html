@@ -24,7 +24,7 @@
 
         <div class="tanamdeboba">
             <label for="tanamdeboba-input">თანამდებობა</label>
-            <input data-input="0" class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+            <input  data-input="0" class="os tan-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -40,16 +40,16 @@
 
 
        
-        
+       
             <div class="start-date">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input onchange="validateDateInputs()" data-input="0" class="start-i os"  required id="start-date-input" type="date">
+                <input  data-input="0" class="start-i os"  required id="start-date-input" type="date">
             </div>
             
     
             <div class="end-date">
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input onchange="validateDateInputs()" data-input="0" class="end-i os" required id="end-date-input" type="date">
+                <input data-input="0" class="end-i os" required id="end-date-input" type="date">
             </div>
             
           
@@ -165,21 +165,27 @@
         
             <span class="aboutMe-span" style="opacity:0">ჩემ შესახებ</span>
             <p id="aboutMe"></p>
-            <div style="position: absolute;
-            width: 662px;
+            <div style="position: relative;
+            width: 680px;
             height: 0px;
             right: 140px;
-            top: 341px;
+            margin-top: 341px;
+            left:80px;
+            right:80px;
             
             border: 1px solid #C8C8C8;"></div>
-             <div class="experience">sdad</div>
-            <div>sda</div>
-            <div>sasd</div>
+
+            <!-- <div style="border:1px solid black" class="left-exp">
+
+            </div> -->
+             
         </div>
     
  
         
-        <script src="experience/personal-info.js"></script>
+         <script src="experience/personal-info.js"></script>
         <script src="experience/validation.js"></script>
+        <script src="experience/experience-info.js"></script> 
+       
 </body>
 </html>

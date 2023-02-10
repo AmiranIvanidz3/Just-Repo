@@ -193,8 +193,6 @@ getStorage(".start-i")
 function emptyInput(classs) {
   let status;
   var inputs = document.querySelectorAll(`${classs}`);
- 
-
   for (var i = 0; i < inputs.length; i++) {
     if (!inputs[i].value && inputs[i].value < 1  ) {
       inputs[i].style.borderColor = "red"
