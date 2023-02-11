@@ -36,7 +36,7 @@
             <h3>პირადი ფოტოს ატვირთვა</h3>
           
                 <label for="file-upload"><span class="s">ატრვირთვა</span></label>
-    <input type="file" id="file-upload" accept="image/*" onchange="x();" />
+    <input type="file"required id="file-upload" accept="image/*" onchange="x();" />
                 
             </label>
         </div>
@@ -46,7 +46,7 @@
         </div>
         <div class="mail">
             <label for="mail" >ელ.ფოსტა</label>
-            <input  id="mail" name="mail"  onkeypress="return event.charCode != 32" type="text">
+            <input required id="mail" name="mail"  onkeypress="return event.charCode != 32" type="text">
             <span class="mail-span">უნდა მთავრდებოდეს @redberry.ge</span>
         </div>
         <div class="mobile">

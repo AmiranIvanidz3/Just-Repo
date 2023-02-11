@@ -238,13 +238,13 @@ const personal_form = document.getElementById('personal-form')
 personal_form.addEventListener("submit",function(e){
     {
         if(!checkLastName(lastName, lastName_label) || !checkName(name, name_label) || !validateEmail || p == false){
-          
-            e.preventDefault()
             alert("Check Inputs Please")
-          
-        }else{
+            e.preventDefault()
             
+          
         }
+            
+        
     
         
        
