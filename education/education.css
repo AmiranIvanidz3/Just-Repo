@@ -1,0 +1,247 @@
+.collage{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 846px;
+height: 125px;
+left: calc(50% - 846px/2 - 411px);
+top: 157px;
+}
+.collage > label{
+    width: 798px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+.collage > input{
+    box-sizing: border-box;
+
+width: 798px;
+height: 48px;
+
+background: #FFFFFF;
+
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+.collage > p{
+    width: 798px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 21px;
+/* identical to box height, or 150% */
+
+display: flex;
+align-items: center;
+
+/* შავი/500 */
+
+color: #2E2E2E;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+}
+.quality{
+    /* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 419px;
+height: 125px;
+left: calc(50% - 419px/2 - 624.5px);
+top: 294px;
+}
+.quality > label{
+    width: 371px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+.quality > input{
+    
+box-sizing: border-box;
+
+width: 371px;
+height: 48px;
+
+background: #FFFFFF;
+
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+.endDate{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 419px;
+height: 93px;
+left: calc(50% - 419px/2 - 197.5px);
+top: 294px;
+}
+.endDate > label{
+    width: 371px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+}
+.endDate > input{
+    box-sizing: border-box;
+
+width: 371px;
+height: 48px;
+
+background: #FFFFFF;
+
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+.tell{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 846px;
+height: 224px;
+left: calc(50% - 846px/2 - 411px);
+top: 405px;
+
+}
+.tell > label{
+    width: 798px;
+height: 21px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+.tell > textarea{
+    box-sizing: border-box;
+
+width: 798px;
+height: 179px;
+
+background: #FFFFFF;
+
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 1;
+}

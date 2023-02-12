@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="experience/exp.css">
     <link rel="stylesheet" href="experience/added.css">
+    <link rel="stylesheet" href="education/education.css">
     
     <title>Exprience</title>
 </head>
@@ -20,7 +21,25 @@
       <a href="index.html"><img src="main/ellipse.png" class="ellipse" alt="index.html">
     </a>
       
-    <form id="experience-form" action="education.html">
+    <form id="experience-form" action="result.html">
+        <div class="collage">
+            <label for="">სასწავლებელი</label>
+            <input class="collage-i collage-i0" required type="text">
+            <p>მინიმუმ 2 სიმბოლო</p>
+        </div>
+        <div class="quality">
+            <label>ხარისხი</label>
+            <input required class="quality-i quality-i0" type="text">
+
+        </div>
+        <div class="endDate">
+            <label for="">დამთავრების თარიღი</label>
+            <input class="endDate-i end-date-i0" type="date" required>
+        </div>
+        <div class="tell">
+            <label for="">აღწერეთ</label>
+            <textarea class="tell-i tell0" required></textarea>
+        </div>
 
         
         
@@ -30,7 +49,7 @@
         width: 798px;
         height: 0px;
         left: 149px;
-        margin-top: 759px;
+        margin-top: 674px;
         border: 1px solid #C1C1C1;
         margin-bottom:59px;"></div>
 
@@ -42,54 +61,9 @@
 
 
       
-        <!-- <div class="add">
-            
-            <div class="tanamdeboba-add">
-                <label for="tanamdeboba-input">თანამდებობა</label>
-                <input data-input="0" class="tanamdeboba-i" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
-                <span>მინიმუმ 2 სიმბოლო</span>
-            </div>
-
-            <div class="employe-add">
-                <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-                <input class="employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
-                <span>მინიმუმ 2 სიმბოლო</span>
-            </div>
-
-           <div style="border:1px solid black; display:flex; justify-content:space-between ">
-            <div class="start-date-add">
-                <label for="start-date-input">დაწყების რიცხვი</label>
-                <input class="start-date-i" required id="start-date-input" type="date">
-            </div>
-            
-    
-            <div class="end-date-add" >
-                <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input class="end-date-i" required id="end-date-input" onchange="validateDates()" type="date">
-            </div>
-        </div>
-
-        <div class="describe-add">
-            <label for="describe-input">აღწერეთ</label>
-            <textarea  class="describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
-        </div>
-        <div style="
-        width: 798px;
-        height: 0px;
-        left: 149px;
-        margin-top: 58px;
-        border: 1px solid #C1C1C1;
-        margin-bottom:59px;
-        margin-left:20px"></div>
-
-
-
        
-    
-    
-            </div> -->
            
-            <button type="button" value="add" class="add-more"><span>მეტის გამოცდილების დამატება</span></button>
+            <button type="button" value="add" class="add-more "><span>სხვა სასწავლებლის დამატება</span></button>
             <div style=" display:flex; justify-content:space-between; margin-top:111px; margin-left:150px; width:797px">
                 <button class="prev-btn-x"type="button" onclick="window.location.href = 'personal.html'"><span>უკან</span></button>
           
