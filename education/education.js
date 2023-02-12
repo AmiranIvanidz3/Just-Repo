@@ -40,7 +40,7 @@ function setStorage(classs){
  
  
  
- document.getElementById("amo").innerHTML = sessionStorage.getItem("html")
+
  if(sessionStorage.getItem("right-html") != null){
   document.getElementById("right").innerHTML += sessionStorage.getItem("right-html")
  }
@@ -226,47 +226,8 @@ function emptyInput(classs) {
         saveByClass("end-i")
        
         
-        document.getElementById("amo").innerHTML += `<div class="add">
-            
-        <div class="tanamdeboba-add">
-        <label for="tanamdeboba-input">თანამდებობა</label>
-        <input  data-id="0" class="os tan-i tan-i${number}" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
-        <span>მინიმუმ 2 სიმბოლო</span>
-    </div>
-        
-    <div class="employe-add">
-    <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-    <input data-employe="0" class="employe-i${number}  required os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
-    <span>მინიმუმ 2 სიმბოლო</span>
-</div>
-
-       <div style="border:1px solid black; display:flex; justify-content:space-between ">
-       <div class="start-date-add">
-       <label for="start-date-input">დაწყების რიცხვი</label>
-       <input  data-input="0" class="start-i${number} start-i os" required  required id="start-date-input" type="date">
-       </div>
-        
-
-       <div class="end-date-add">
-       <label for="end-date-input">დამტავრების რიცხვი</label>
-       <input data-input="0" class="end-i${number} end-i os" required id="end-date-input" type="date">
-   </div>
-    </div>
-
-    <div class="describe-add">
-            <label for="describe-input">აღწერეთ</label>
-            <textarea data-describe="0" required class="describe-i${number} os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
-        </div>
-    <div style="
-    width: 798px;
-    height: 0px;
-    left: 149px;
-    margin-top: 58px;
-    border: 1px solid #C1C1C1;
-    margin-bottom:59px;
-    margin-left:20px"></div>
-        </div> `
-       sessionStorage.setItem('html', document.getElementById("amo").innerHTML )
+      
+     
         typeBorderColor()
         workDate()
         getAllStorage()
@@ -275,9 +236,9 @@ function emptyInput(classs) {
 document.getElementById("right").innerHTML += ` 
 <div  class="right-exp">
 <header>გამოცდილება</header>
-<label class="right-label"><span class="right-tan${number} right-tan-r"></span>  <span class="right-employe${number} right-employe-r"></span></label>
-<p class="right-date"><span class="right-start${number} right-start-r"></span> - <span class="right-end${number} right-end-r"></span></p>
-<p  class="right-describe-r right-describe${number}"></p>
+<label class="right-label"><span class="right-tan${number}"></span>  <span class="right-employe${number}"></span></label>
+<p class="right-date"><span class="right-start${number}"></span> - <span class="right-end${number}"></span></p>
+<p  class="right-describe right-describe${number}"></p>
 
 </div> `
 number++
