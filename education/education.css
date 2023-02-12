@@ -299,3 +299,51 @@ color: #919191;
 
 
 } 
+#s{
+    
+width: 84px;
+height: 19px;
+
+
+font-family: 'Helvetica Neue';
+font-style: italic;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #919191;
+}
+#textarea{
+    box-sizing: border-box;
+
+width: 798px;
+height: 179px;
+
+background: #FFFFFF;
+border: 1px solid #BCBCBC;
+border-radius: 4px;
+
+
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 1;
+}
+.quality-i{
+    box-sizing: border-box;
+
+width: 371px;
+height: 48px;
+
+background: #FFFFFF;
+border: 1px solid #BCBCBC;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}

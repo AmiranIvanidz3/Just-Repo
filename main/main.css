@@ -293,3 +293,6 @@ left: 80px;
 #right{
     margin-right:0px;
 }
+input, select, textarea{
+    padding: 8px 12px;
+}

@@ -21,22 +21,22 @@
             
             <label for="name">სახელი</label>
             
-            <input type="text" name="name" onkeypress="return event.charCode != 32" id="name" placeholder="ანზორ">
+            <input type="text" name="name" minlength="2" onkeypress="return event.charCode != 32" id="name" placeholder="ანზორ">
             <span id="name-label">მინიმუმ 2 ასო, ქართული ასოებით</span>
            
             
         </div>
         <div class="lastName-field">
             <label for="lastname">გვარი</label>
-            <input type="text"name="lName"  onkeypress="return event.charCode != 32" id="lastName"placeholder ="მუმლაძე">
-            <span id="lastName-label">მინიმუმ 2 ასო, ქართული ასოებით</span>
+            <input type="text"name="lName" minlength="2"  onkeypress="return event.charCode != 32" id="lastName"placeholder ="მუმლაძე">
+            <span id="lastName-label" >მინიმუმ 2 ასო, ქართული ასოებით</span>
             
         </div>
         <div class="uploadImage">
             <h3>პირადი ფოტოს ატვირთვა</h3>
           
                 <label for="file-upload"><span class="s">ატრვირთვა</span></label>
-    <input type="file"required id="file-upload" accept="image/*" onchange="x();" />
+    <input type="file" id="file-upload" accept="image/*" onchange="x();" />
                 
             </label>
         </div>
@@ -52,7 +52,7 @@
         <div class="mobile">
            
             <label for="mobile">მობილურის ნომერი</label>
-            <input  type="tel"  id="phone" name="phone" placeholder="995 555 555 555" pattern="[9]{1}[9]{1}[5]{1} [0-9]{3} [0-9]{3} [0-9]{3}" required>
+            <input  type="tel"  id="phone" name="phone" placeholder="555666777" pattern="[5]{1}[0-9]{2}[0-9]{3}[0-9]{3}" required>
             
             <span>უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს</span>
         </div>

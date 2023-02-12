@@ -35,14 +35,12 @@ function checkName(input, span)
         })
         if(handleNameValidation(input.value) && input.value.length > 2){
                 
-            input.style.borderColor = "green"
-            span.style.color = "green"
+           
            d = true
            
         
     }else{
-        input.style.borderColor = "red"
-        span.style.color = "red"
+        
         d = false
      
     }
@@ -58,7 +56,7 @@ function handleNameValidation(value)  {
     RegExp(onlyGeorgian).test(value);
 }
 checkName(name, name_label)
-console.log(checkName(name, name_label))
+
 
 //LastName Validation
 const lastName = document.getElementById('lastName')
@@ -90,14 +88,12 @@ function checkLastName(input, span)
         })
         if(handleNameValidation(input.value) && input.value.length > 2){
                 
-            input.style.borderColor = "green"
-            span.style.color = "green"
+            
            d = true
            
         
         }else{
-        input.style.borderColor = "red"
-        span.style.color = "red"
+       
         d = false
      
         }
@@ -114,11 +110,19 @@ console.log(lastName)
 
 
 // picture upload
-let p=false;
+let p;
+
 x()
 function x(){
     var imageInput = document.getElementById('file-upload');
 var displayedImage = document.getElementById('preview-selected-image');
+if(displayedImage.src == "file:///C:/Users/amira/OneDrive/Desktop/AMirani/personal.html"){
+    p = false
+}else{
+    p=true
+}
+console.log(p)
+
 
 imageInput.addEventListener('change', function(e) {
   var reader = new FileReader();
@@ -152,51 +156,53 @@ if (storedImageData) {
         var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return regex.test(String(email).toLowerCase());
       }
-    function validateEmail() {
-        let string = [...mail.value].reverse().join("");
-        if(string.substr(0,12) === "eg.yrrebder@"){
-         mail_span.style.color = "green"
-         d = true
-        
-      
+      function validateEmail(email) {
+        const emailRegEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@redberry.ge$/;
+        return emailRegEx.test(email);
+    }
+    mail.addEventListener('input', function(){
+        if(validateEmail(mail.value)){
+            mail.style.borderColor = "green"
+            sessionStorage.setItem("mail", mail.value)
         }else{
-         mail_span.style.color = "red"
-         d = false
-       
-         
+            mail.style.borderColor = "red"
+            sessionStorage.setItem("mail", mail.value)
         }
-        
-            mail.addEventListener('input', function(){
-                mail_span_right.innerText = mail.value
-                sessionStorage.setItem('mail', mail.value)
-               let string = [...mail.value].reverse().join("");
-               if(string.substr(0,12) === "eg.yrrebder@"){
-                mail_span.style.color = "green"
-                d = true
-               
-             
-               }else{
-                mail_span.style.color = "red"
-                d = false
-              
-                
-               }
-               })
-               return d
-            }
+        mail_span_right.innerText = mail.value
+
+    })
             validateEmail()
 
 
 //phone number 
+function formatPhoneNumber(phoneInput) {
+  let formattedPhoneNumber = "+995 ";
+  formattedPhoneNumber += phoneInput.substring(0, 3) + " ";
+  formattedPhoneNumber += phoneInput.substring(3, 6) + " ";
+  formattedPhoneNumber += phoneInput.substring(6, 9) + " ";
+  formattedPhoneNumber += phoneInput.substring(9);
+  return formattedPhoneNumber;
+}
             const phone = document.querySelector(".mobile-span-right")
             const mobile = document.getElementById("phone")
             phone.innerText = sessionStorage.getItem('phone')
             mobile.value = sessionStorage.getItem('phone')
-            mobile.addEventListener('input', function(){
-                phone.innerText = mobile.value
-                sessionStorage.setItem('phone', mobile.value)
+            
+            mobile.addEventListener("input", function() {
+                phone.innerText = formatPhoneNumber(mobile.value);
                 phone_status = true
-            })
+                sessionStorage.setItem("phone", mobile.value)
+                
+                
+              });
+             
+              
+              
+              
+              
+              
+
+            
 
 
 //About-Me-Section
@@ -237,9 +243,10 @@ AboutMe()
 const personal_form = document.getElementById('personal-form')
 personal_form.addEventListener("submit",function(e){
     {
-        if(!checkLastName(lastName, lastName_label) || !checkName(name, name_label) || !validateEmail || p == false){
-            alert("Check Inputs Please")
+        if(!checkLastName(lastName, lastName_label) || !checkName(name, name_label) || !validateEmail(mail.value) || p == false){
+          
             e.preventDefault()
+            console.log("false")
             
           
         }

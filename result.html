@@ -11,26 +11,26 @@
     
     <title>Exprience</title>
 </head>
-<body>
+<body style=" overflow: auto;display:flex; justify-content:center; align-items:center;">
    
-    <span class="header">გამოცდილება</span>
-    <div class="line"></div>
-    <div class="section-1">
-
-      <a href="index.html"><img src="main/Vector.png" class="left-arrow" alt="index.html"></a>
+    
+    <div></div><a href="index.html"><img src="main/Vector.png" class="left-arrow" alt="index.html"></a>
       <a href="index.html"><img src="main/ellipse.png" class="ellipse" alt="index.html">
+    <div class="section-1" style="display:none">
+
+      
     </a>
       
-    <form id="edu-form" action="result.html">
+    <form id="experience-form" action="result.html" >
         <div class="collage">
             <label for="">სასწავლებელი</label>
-            <input min="2" style="padding:8px 12px" class="collage-i collage-i0" required type="text">
+            <input min="2" class="collage-i collage-i0" required type="text">
             <p>მინიმუმ 2 სიმბოლო</p>
         </div>
         <div class="quality">
             <label>ხარისხი</label>
             <select class="quality-i quality-i0">
-                <option value="">select</option>
+                
                 
                 
                 
@@ -70,7 +70,7 @@
            
             <button type="button" value="add" class="add-more" id="add-more"><span>სხვა სასწავლებლის დამატება</span></button>
             <div style=" display:flex; justify-content:space-between; margin-top:111px; margin-left:150px; width:797px">
-                <button class="prev-btn-x"type="button" onclick="window.location.href = 'experience.html'"><span>უკან</span></button>
+                <button class="prev-btn-x"type="button" onclick="window.location.href = 'personal.html'"><span>უკან</span></button>
           
 
                 <button type="submit" class="next-btn-x"><span>შემდეგი</span></button>
@@ -91,7 +91,7 @@
 
 
 
-    <div class="section-2" style="position:relative">
+    <div class="section-2" style=" border: 0.8px solid #000000; ;position:absolute; top:54px; left:549px; right:549px;">
        
         <img  id="preview-selected-image" />
         

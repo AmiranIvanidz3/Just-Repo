@@ -40,11 +40,26 @@ saveByClass("employe-i")
 saveByClass("start-i")
 saveByClass("end-i")
 
+
+saveByClass("quality-i")
+saveByClass("collage-i")
+saveByClass("endDate-i")
+saveByClass("tell-i")
+
+
+saveByClasss("right-quality")
+saveByClasss("right-collage")
+saveByClasss("right-endDate")
+saveByClasss("right-tell")
+
+
 saveByClasss("right-start-r")
 saveByClasss("right-end-r")
 saveByClasss("right-employe-r")
 saveByClasss("right-tan-r")
 saveByClasss("right-describe-r")
+
+
 
 
 

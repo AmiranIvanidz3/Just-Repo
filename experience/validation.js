@@ -265,7 +265,8 @@ function emptyInput(classs) {
     border: 1px solid #C1C1C1;
     margin-bottom:59px;
     margin-left:20px"></div>
-        </div> `
+        </div>
+         `
        sessionStorage.setItem('html', document.getElementById("amo").innerHTML )
         typeBorderColor()
         workDate()
@@ -273,13 +274,22 @@ function emptyInput(classs) {
 
 
 document.getElementById("right").innerHTML += ` 
+<div style="
+        width: 680px;
+        height: 0px;
+        margin-left:80px;
+       
+        
+        border: 1px solid #C1C1C1;
+        margin-bottom:59px;"></div>
 <div  class="right-exp">
 <header>გამოცდილება</header>
 <label class="right-label"><span class="right-tan${number} right-tan-r"></span>  <span class="right-employe${number} right-employe-r"></span></label>
 <p class="right-date"><span class="right-start${number} right-start-r"></span> - <span class="right-end${number} right-end-r"></span></p>
 <p   class="right-describe-r right-describe${number}" style="margin-top:17px;"></p>
 
-</div> `
+</div> 
+`
 number++
 
 sessionStorage.setItem("number", number)
@@ -295,11 +305,10 @@ giveAllinfo()
 )   
 
 document.getElementById("experience-form").addEventListener("submit",function(e){
-  if(!checkInputs() && !validateDates()){
+  if(!checkInputs() || !validateDates()){
     e.preventDefault()
+    console.log(validateDates())
   }
 })
-
-
 
 
