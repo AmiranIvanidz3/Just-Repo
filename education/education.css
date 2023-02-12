@@ -117,7 +117,8 @@ order: 0;
 align-self: stretch;
 flex-grow: 0;
 }
-.quality > input{
+
+.quality > select{
     
 box-sizing: border-box;
 
@@ -133,6 +134,24 @@ border-radius: 4px;
 flex: none;
 order: 1;
 align-self: stretch;
+flex-grow: 0;
+}
+.quality > select > option{
+    display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px 10px 10px 16px;
+gap: 10px;
+
+width: 370px;
+height: 41px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
 flex-grow: 0;
 }
 .endDate{
@@ -245,3 +264,38 @@ order: 1;
 align-self: stretch;
 flex-grow: 1;
 }
+ .right-collage{
+   
+width: 500px;
+height: 20px;
+margin-bottom:7px;
+margin-top:15px;
+
+font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+
+
+
+
+
+color: #1A1A1A;
+}
+.right-endDatee{
+   
+width: 84px;
+height: 19px;
+
+
+font-family: 'Helvetica Neue';
+font-style: italic;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #919191;
+
+
+} 

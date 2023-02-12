@@ -277,7 +277,7 @@ document.getElementById("right").innerHTML += `
 <header>გამოცდილება</header>
 <label class="right-label"><span class="right-tan${number} right-tan-r"></span>  <span class="right-employe${number} right-employe-r"></span></label>
 <p class="right-date"><span class="right-start${number} right-start-r"></span> - <span class="right-end${number} right-end-r"></span></p>
-<p  class="right-describe-r right-describe${number}"></p>
+<p   class="right-describe-r right-describe${number}" style="margin-top:17px;"></p>
 
 </div> `
 number++
