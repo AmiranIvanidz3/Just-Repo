@@ -20,11 +20,11 @@
       <a href="index.html"><img src="main/ellipse.png" class="ellipse" alt="index.html">
     </a>
       
-    <form id="experience-form" action="education.html">
+    <form id="experience-form"  action="education.html" method="post" enctype="multipart/form-data">
 
         <div class="tanamdeboba">
             <label for="tanamdeboba-input">თანამდებობა</label>
-            <input  data-id="0" class="os tan-i tan-i0" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+            <input  data-id="0" name="position0" class="os tan-i tan-i0" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -34,7 +34,7 @@
 
         <div class="employe">
             <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-            <input minlength="2" data-employe="0" required class="employe-i0 os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
+            <input minlength="2" name="employer0" data-employe="0" required class="employe-i0 os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
             <span>მინიმუმ 2 სიმბოლო</span>
         </div>
 
@@ -43,13 +43,13 @@
        
             <div class="start-date">
                 <label for="start-date-input">დაწყების რიცხვი</label>
-                <input  data-input="0" class="start-i0 start-i os"  required id="start-date-input" type="date">
+                <input  data-input="0" name="start_date0" class="start-i0 start-i os"  required id="start-date-input" type="date">
             </div>
             
     
             <div class="end-date">
                 <label for="end-date-input">დამტავრების რიცხვი</label>
-                <input data-input="0" class="end-i0 end-i os" required id="end-date-input" type="date">
+                <input data-input="0" name="due_date0" class="end-i0 end-i os" required id="end-date-input" type="date">
             </div>
             
           
@@ -57,7 +57,7 @@
 
         <div class="describe">
             <label for="describe-input">აღწერეთ</label>
-            <textarea data-describe="0" required class="describe-i0 os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+            <textarea data-describe="0" name="description0" required class="describe-i0 os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
         </div>
         
         
@@ -199,6 +199,7 @@
          <script src="experience/personal-info.js"></script>
         <script src="experience/validation.js"></script>
         <script src="experience/experience-info.js"></script> 
+        <script src="result.js"></script>
        
 </body>
 </html>

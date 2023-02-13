@@ -173,7 +173,7 @@ if (storedImageData) {
     })
             validateEmail()
 
-
+           
 //phone number 
 function formatPhoneNumber(phoneInput) {
   let formattedPhoneNumber = "+995 ";
@@ -240,6 +240,7 @@ function AboutMe(){
 }
 AboutMe()
 
+
 const personal_form = document.getElementById('personal-form')
 personal_form.addEventListener("submit",function(e){
     {
@@ -250,6 +251,15 @@ personal_form.addEventListener("submit",function(e){
             
           
         }
+       
+
+     
+
+
+        
+
+        
+       
             
         
     

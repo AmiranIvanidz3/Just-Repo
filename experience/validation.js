@@ -230,32 +230,32 @@ function emptyInput(classs) {
             
         <div class="tanamdeboba-add">
         <label for="tanamdeboba-input">თანამდებობა</label>
-        <input  data-id="0" class="os tan-i tan-i${number}" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
+        <input  data-id="0" name="position${number}" class="os tan-i tan-i${number}" minlength="2" required placeholder="დეველოპერი, დიზაინერი და ა.შ." type="text" id="tanamdeboba-input">
         <span>მინიმუმ 2 სიმბოლო</span>
     </div>
         
     <div class="employe-add">
     <label minlength="2" required for="employe-input">დამსაქმებელი</label>
-    <input data-employe="0" class="employe-i${number}  required os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
+    <input data-employe="0" name="employer${number}" class="employe-i${number}  required os employe-i" placeholder="დამსაქმებელი" type="text" id="employe-input">
     <span>მინიმუმ 2 სიმბოლო</span>
 </div>
 
        <div style="border:1px solid black; display:flex; justify-content:space-between ">
        <div class="start-date-add">
        <label for="start-date-input">დაწყების რიცხვი</label>
-       <input  data-input="0" class="start-i${number} start-i os" required  required id="start-date-input" type="date">
+       <input  data-input="0" name="start_date${number}"class="start-i${number} start-i os" required  required id="start-date-input" type="date">
        </div>
         
 
        <div class="end-date-add">
        <label for="end-date-input">დამტავრების რიცხვი</label>
-       <input data-input="0" class="end-i${number} end-i os" required id="end-date-input" type="date">
+       <input data-input="0" name="due_date${number}" class="end-i${number} end-i os" required id="end-date-input" type="date">
    </div>
     </div>
 
     <div class="describe-add">
             <label for="describe-input">აღწერეთ</label>
-            <textarea data-describe="0" required class="describe-i${number} os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
+            <textarea data-describe="0" name="description${number}" required class="describe-i${number} os describe-i" placeholder="როლი თანამდებობაზე და ზოგადი აღწერა" type="text" id="describe-input"></textarea>
         </div>
     <div style="
     width: 798px;
