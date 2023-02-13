@@ -135,11 +135,39 @@ function giveInfo(classs, element){
   })
   ira = 0;
   
-  }
+  } 
+function giveInfoo(classs, element){
+    let number = document.querySelectorAll(`${classs}`)
+    
+     for(let i = 0; i < number.length; i++){
+     let ss = document.querySelector(`${element}${i}`)
+     
+    ss.innerText = sessionStorage.getItem(`${classs}${i}`)
+    
+     }
+    let ira = 0;
+     number.forEach(function(x){
+      let ss = document.querySelector(`${element}${ira}`)
+      ira++
+      
+      ss.innerText = x.value
+      x.addEventListener("input", function(){
+        ss.innerText = x.innerText
+
+  
+        
+     
+      })
+     
+     
+    })
+    ira = 0;
+    
+    } 
   function giveAllinfo(){
-   
+   giveInfo(".quality-i", ".right-quality")
     giveInfo(".collage-i", ".right-collage")
-    giveInfo(".quality-i", ".right-quality")
+   
     giveInfo(".tell-i", ".right-tell")
     giveInfo(".endDate-i", ".right-endDate")
 
@@ -174,7 +202,7 @@ function giveInfo(classs, element){
      populateSelect(data) 
   
     }
-    function populateSelect(data) {
+    function populateSelect(data,value) {
       const select = document.querySelectorAll(".quality-i");
       select.forEach(function(sele){
         data.forEach(item => {
@@ -182,6 +210,9 @@ function giveInfo(classs, element){
           const option = document.createElement("option");
           option.value = item.title;
           option.innerText = item.title;
+          option.id = item.id
+          
+          console.log(option.value)
           sele.appendChild(option);
         
         });
@@ -221,6 +252,7 @@ function giveInfo(classs, element){
      }
   
     }
+   
     
     saveByClass("endDate-i")
           saveByClass("quality-i")
@@ -327,10 +359,15 @@ function giveInfo(classs, element){
 
     // sessionStorage.clear()
     document.getElementById("edu-form").addEventListener("submit", function(e){
+      sessionStorage.setItem("number-2", number)
     if(checkInputs() == false){
       e.preventDefault()
       checkInputs()
     }
     })
+    sessionStorage.setItem("number-2", number)
     // sessionStorage.clear()
     console.log(sessionStorage.getItem("number"))
+
+
+    

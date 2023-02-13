@@ -309,6 +309,7 @@ document.getElementById("experience-form").addEventListener("submit",function(e)
     e.preventDefault()
     console.log(validateDates())
   }
+  sessionStorage.setItem("number", number)
 })
 
 

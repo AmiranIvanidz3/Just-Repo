@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="experience/exp.css">
     <link rel="stylesheet" href="experience/added.css">
     <link rel="stylesheet" href="education/education.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     <title>Exprience</title>
 </head>
@@ -138,7 +139,79 @@
          <script src="experience/personal-info.js"></script>
         <script src="education/educations.js"></script>
         <script src="experience/experience-info.js"></script> 
-        <script src="result.js"></script>
-       
+        <script>
+let loop = sessionStorage.getItem("number")
+let loop_2 = sessionStorage.getItem("number-2")
+console.log(loop_2)
+let experiences = []
+   for(let i = 0; i< loop; i++){
+     let list = {
+        position : sessionStorage.getItem(`tan-i${i}`),
+        employer: sessionStorage.getItem(`employe-i${i}`),
+        start_date :convertDateFormat(sessionStorage.getItem(`start-i${i}`)) ,
+        due_date: convertDateFormat(sessionStorage.getItem(`end-i${i}`)),
+        description: sessionStorage.getItem(`describe-i${i}`)
+   }
+   experiences.push(list)
+}
+function convertDateFormat(dateString) {
+  return new Date(dateString).toISOString().substr(0, 10);
+}
+let education = []
+   for(let i = 0; i< loop_2; i++){
+     let list = {
+        institute : sessionStorage.getItem(`right-collage${i}`),
+        degree_id: sessionStorage.getItem(`right-quality${i}`),
+        due_date :convertDateFormat(sessionStorage.getItem(`right-endDate${i}`)),
+        description: sessionStorage.getItem(`right-tell${i}`)
+        
+   }
+   education.push(list)
+}
+
+    const dataUrl = localStorage.getItem(sessionStorage.getItem('imageData'));
+    const blob = dataUrl;
+    const file = new File([blob], "myFileName", { type: "image/png" });
+ 
+
+
+
+
+const formData = new FormData();
+formData.append("name", sessionStorage.getItem("name"));
+formData.append("surname",sessionStorage.getItem("lName"));
+formData.append("email", sessionStorage.getItem("mail"));
+formData.append("phone_number", "+995"+sessionStorage.getItem("phone"));
+formData.append("experiences", JSON.stringify(experiences));
+formData.append("educations", JSON.stringify(education));
+formData.append("image", file);
+formData.append("about_me",sessionStorage.getItem("about"));
+
+
+
+
+// Display the key/value pairs
+for (var pair of formData.entries()) {
+    console.log(pair[0]+ ', ' + pair[1]); 
+}
+
+
+const apiUrl = "https://resume.redberryinternship.ge/api/cvs";
+
+async function sendPostRequestWithAxios(data) {
+  try {
+    const response = await axios.post("https://resume.redberryinternship.ge/api/cvs", data);
+    return response.json();
+
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+}
+
+sendPostRequestWithAxios(formData)
+
+
+        </script>
 </body>
 </html>

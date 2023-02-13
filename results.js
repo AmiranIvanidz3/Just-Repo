@@ -1,11 +1,4 @@
-
 let loop = sessionStorage.getItem("number")
-let tan_i = []
-let describe_i = []
-let start_i = []
-let end_i = []
-let employe_i = []
-
 let experiences = []
    for(let i = 0; i< loop; i++){
      let list = {
@@ -17,9 +10,6 @@ let experiences = []
    }
    experiences.push(list)
 }
-console.log(experiences)
-
-  
 
 let education = []
    for(let i = 0; i< loop; i++){
@@ -27,26 +17,24 @@ let education = []
         institute : sessionStorage.getItem(`right-collage${i}`),
         degree: sessionStorage.getItem(`right-quality${i}`),
         due_date :sessionStorage.getItem(`right-endDate${i}`) ,
-        description: sessionStorage.getItem(`right-tell${i}`),
+        description: sessionStorage.getItem(`right-tell${i}`)
         
    }
    education.push(list)
 }
-console.log(education)
-
-    const formData = new FormData();
-    formData.append("name", sessionStorage.getItem("name"));
-    formData.append("surname",sessionStorage.getItem("lName"));
-    formData.append("email", sessionStorage.getItem("mail"));
-    formData.append("phone_number", "+995"+sessionStorage.getItem("phone"));
-    formData.append("experiences", JSON.stringify(experiences));
-    formData.append("educations", JSON.stringify(education));
-    formData.append("image", sessionStorage.getItem("imageData"));
-    formData.append("about_me",sessionStorage.getItem("about"));
-   console.log(formData);
-   const apiUrl = "https://resume.redberryinternship.ge/api/cvs";
 
 
+const formData = new FormData();
+formData.append("name", sessionStorage.getItem("name"));
+formData.append("surname",sessionStorage.getItem("lName"));
+formData.append("email", sessionStorage.getItem("mail"));
+formData.append("phone_number", "+995"+sessionStorage.getItem("phone"));
+formData.append("experiences", JSON.stringify(experiences));
+formData.append("educations", JSON.stringify(education));
+formData.append("image", sessionStorage.getItem("imageData"));
+formData.append("about_me",sessionStorage.getItem("about"));
+console.log(formData);
+const apiUrl = "https://resume.redberryinternship.ge/api/cvs";
 
 
 async function x(){
@@ -63,20 +51,3 @@ async function x(){
 }
 x()
    
-
-  
-  
-
-
-  
- 
-
-  
-
-
-
-
-
-
-  
-  
